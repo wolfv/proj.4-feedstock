@@ -12,7 +12,7 @@ source:
         - make_check.patch  # [osx]
 
 build:
-    number: 0
+    number: 1
     skip: True  # [py35 and win32]
 
 requirements:
