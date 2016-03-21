@@ -12,13 +12,15 @@ source:
         - make_check.patch  # [osx]
 
 build:
-    number: 1
+    number: 2
     features:
-     - vc9  # [win and py27]
-     - vc10  # [win and py34]
-     - vc14  # [win and py35]
+        - vc9  # [win and py27]
+        - vc10  # [win and py34]
+        - vc14  # [win and py35]
 
 requirements:
+    build:
+        - python  # [win]
     run:
         # The VS version is important. See # https://github.com/SciTools/conda-recipes-scitools/issues/94.
         - python  # [win]
