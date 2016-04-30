@@ -5,7 +5,7 @@ Home: http://trac.osgeo.org/proj/
 
 Package license: MIT
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Cartographic projection software
 
