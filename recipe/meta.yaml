@@ -1,43 +1,42 @@
-{% set version = "4.9.2" %}
+{% set version = "4.9.3" %}
 
 package:
-    name: proj.4
-    version: {{ version }}
+  name: proj.4
+  version: {{ version }}
 
 source:
-    fn:  proj-{{ version }}.tar.gz
-    url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-    sha256: 60bf9ad1ed1c18158e652dfff97865ba6fb2b67f1511bc8dceae4b3c7e657796
-    patches:
-        - make_check.patch  # [osx]
+  fn:  proj-{{ version }}.tar.gz
+  url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
+  sha256: 6984542fea333488de5c82eea58d699e4aff4b359200a9971537cd7e047185f7
+  patches:
+    - make_check.patch  # [osx]
 
 build:
-    number: 0
-    features:
-        - vc9  # [win and py27]
-        - vc10  # [win and py34]
-        - vc14  # [win and py35]
+  number: 0
+  features:
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py35]
 
 requirements:
-    build:
-        - python  # [win]
-        - cmake  # [win]
-    run:
-        # The VS version is important. See # https://github.com/SciTools/conda-recipes-scitools/issues/94.
-        - python  # [win]
+  build:
+    - python  # [win]
+    - cmake  # [win]
+  run:
+    # The VS version is important. See # https://github.com/SciTools/conda-recipes-scitools/issues/94.
+    - python  # [win]
 
 test:
-    commands:
-        - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
-        - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
+  commands:
+    - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
+    - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
 
 about:
-    home: http://trac.osgeo.org/proj/
-    license: MIT
-    summary: Cartographic projection software
-
+  home: http://trac.osgeo.org/proj/
+  license: MIT
+  summary: 'Cartographic projection software.'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
-        - pelson
+  recipe-maintainers:
+    - ocefpaf
+    - pelson
