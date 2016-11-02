@@ -1,7 +1,7 @@
 {% set version = "4.9.3" %}
 
 package:
-  name: proj.4
+  name: proj4
   version: {{ version }}
 
 source:
@@ -20,17 +20,23 @@ requirements:
   build:
     - python  # [win]
     - cmake  # [win]
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py35]
   run:
-    # The VS version is important. See # https://github.com/SciTools/conda-recipes-scitools/issues/94.
-    - python  # [win]
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py35]
 
 test:
   commands:
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
+    #- conda inspect linkages -p $PREFIX proj4  # [not win]
+    #- conda inspect objects -p $PREFIX proj4  # [osx]
 
 about:
-  home: http://trac.osgeo.org/proj/
+  home: http://trac.osgeo.org/proj
   license: MIT
   summary: 'Cartographic projection software.'
 

@@ -1,7 +1,7 @@
-About proj.4
-============
+About proj4
+===========
 
-Home: http://trac.osgeo.org/proj/
+Home: http://trac.osgeo.org/proj
 
 Package license: MIT
 
@@ -11,25 +11,25 @@ Summary: Cartographic projection software.
 
 
 
-Installing proj.4
-=================
+Installing proj4
+================
 
-Installing `proj.4` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `proj4` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `proj.4` can be installed with:
+Once the `conda-forge` channel has been enabled, `proj4` can be installed with:
 
 ```
-conda install proj.4
+conda install proj4
 ```
 
-It is possible to list all of the versions of `proj.4` available on your platform with:
+It is possible to list all of the versions of `proj4` available on your platform with:
 
 ```
-conda search proj.4 --channel conda-forge
+conda search proj4 --channel conda-forge
 ```
 
 
@@ -71,27 +71,27 @@ Terminology
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/proj.4-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/proj.4-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/proj.4-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/proj.4-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/proj.4-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/proj-4-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/home-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/home-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/home-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/home-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/home-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/home-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/proj.4/badges/version.svg)](https://anaconda.org/conda-forge/proj.4)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/proj.4/badges/downloads.svg)](https://anaconda.org/conda-forge/proj.4)
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/proj4/badges/version.svg)](https://anaconda.org/conda-forge/proj4)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/proj4/badges/downloads.svg)](https://anaconda.org/conda-forge/proj4)
 
 
-Updating proj.4-feedstock
-=========================
+Updating proj4-feedstock
+========================
 
-If you would like to improve the proj.4 recipe or build a new
+If you would like to improve the proj4 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/proj.4-feedstock are
+Note that all branches in the conda-forge/proj4-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
