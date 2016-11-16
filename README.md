@@ -33,7 +33,6 @@ conda search proj4 --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
@@ -71,9 +70,9 @@ Terminology
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/home-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/home-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/home-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/home-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/home-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/home-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/proj.4-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/proj.4-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/proj.4-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/proj.4-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/proj.4-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/proj-4-feedstock/branch/master)
 
 Current release info
 ====================
