@@ -10,9 +10,11 @@ popd
 
 ./configure --prefix=$PREFIX --without-jni
 
-make
-make check
-make install
+export CFLAGS="-O2 -Wl,-S $CFLAGS"
+
+make -j$CPU_COUNT
+make check -j$CPU_COUNT
+make install -j$CPU_COUNT
 
 ACTIVATE_DIR=$PREFIX/etc/conda/activate.d
 DEACTIVATE_DIR=$PREFIX/etc/conda/deactivate.d

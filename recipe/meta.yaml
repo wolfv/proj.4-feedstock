@@ -5,30 +5,27 @@ package:
   version: {{ version }}
 
 source:
-  fn:  proj-{{ version }}.tar.gz
   url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
   sha256: 6984542fea333488de5c82eea58d699e4aff4b359200a9971537cd7e047185f7
 
 build:
-  number: 4
+  number: 5
+  skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py>=35]
+    - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
     - python  # [win]
     - cmake  # [win]
     - unzip  # [not win]
-    - curl
+    - curl  >=7.44.0,<8
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 or py36)]
   run:
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 or py36)]
 
 test:
   commands:
