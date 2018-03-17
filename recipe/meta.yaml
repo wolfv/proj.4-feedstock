@@ -1,4 +1,4 @@
-{% set version = "4.9.3" %}
+{% set version = "5.0.0" %}
 
 package:
   name: proj4
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-  sha256: 6984542fea333488de5c82eea58d699e4aff4b359200a9971537cd7e047185f7
+  sha256: b30df08d736e69744cb255828721abb545b494d6032c13a96520f3219a444cd2
 
 build:
-  number: 5
+  number: 0
   skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
