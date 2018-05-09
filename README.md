@@ -1,7 +1,7 @@
 About proj4
 ===========
 
-Home: http://trac.osgeo.org/proj
+Home: https://proj4.org
 
 Package license: MIT
 
