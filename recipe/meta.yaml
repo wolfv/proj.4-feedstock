@@ -1,31 +1,28 @@
 {% set version = "5.1.0" %}
+{% set datumgrid_ver = "1.7" %}
 
 package:
   name: proj4
   version: {{ version }}
 
 source:
-  url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-  sha256: 6b1379a53317d9b5b8c723c1dc7bf2e3a8eb22ceb46b8807a1ce48ef65685bb3
+  - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
+    sha256: 6b1379a53317d9b5b8c723c1dc7bf2e3a8eb22ceb46b8807a1ce48ef65685bb3
+  - url: http://download.osgeo.org/proj/proj-datumgrid-{{ datumgrid_ver }}.zip
+    sha256: ffcad4453fac3b4a13ca678ef343e688496e18019f35709ef03c5f200e9fb85a
+    folder: nad
+
 
 build:
-  number: 0
-  skip: True  # [win and py36]
-  features:
-    - vc9  # [win and py27]
-    - vc14  # [win and (py35 or py36)]
+  number: 1
+  run_exports:
+    # so name changes in bugfix revisions.  Pin to bugfix revision.
+    #    https://abi-laboratory.pro/tracker/timeline/proj/
+    - {{ pin_subpackage('proj4', max_pin='x.x.x') }}
 
 requirements:
   build:
-    - python  # [win]
-    - cmake  # [win]
-    - unzip  # [not win]
-    - curl  >=7.44.0,<8
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
-  run:
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - {{ compiler('c') }}
 
 test:
   commands:
@@ -35,8 +32,8 @@ test:
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
     - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975
-    - conda inspect linkages -p $PREFIX proj4  # [not win]
-    - conda inspect objects -p $PREFIX proj4  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://proj4.org/
@@ -48,3 +45,4 @@ extra:
   recipe-maintainers:
     - ocefpaf
     - pelson
+    - msarahan
