@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Cartographic projection software.
+Summary: Cartographic projection software
 
 
 
