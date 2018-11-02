@@ -14,7 +14,7 @@ source:
 
 
 build:
-  number: 2000
+  number: 1001
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
     #    https://abi-laboratory.pro/tracker/timeline/proj/
