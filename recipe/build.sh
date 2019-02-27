@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sh autogen.sh
 ./configure --prefix=$PREFIX --without-jni --host=$HOST
 
 export CFLAGS="-O2 -Wl,-S $CFLAGS"
