@@ -25,6 +25,8 @@ requirements:
     - sqlite
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}}}
+  run:
+    - sqlite
 
 test:
   commands:
