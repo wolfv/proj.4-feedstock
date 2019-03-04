@@ -4,7 +4,7 @@ cmake -G "%CMAKE_GENERATOR%" .. -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBPROJ_SHARE
 cmake --build . --config Release --target install
 cd ..
 copy /Y data\* %LIBRARY_PREFIX%\\share\\proj
-
+del /F /Q %LIBRARY_PREFIX%\\share\\proj\\*.cmake
 
 if errorlevel 1 exit 1
 
