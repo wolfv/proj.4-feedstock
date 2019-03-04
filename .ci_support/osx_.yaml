@@ -15,5 +15,9 @@ macos_min_version:
 pin_run_as_build:
   sqlite:
     max_pin: x
+  zlib:
+    max_pin: x.x
 sqlite:
 - '3'
+zlib:
+- '1.2'
