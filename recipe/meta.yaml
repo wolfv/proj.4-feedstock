@@ -14,6 +14,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
     #    https://abi-laboratory.pro/tracker/timeline/proj/
