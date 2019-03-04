@@ -21,13 +21,14 @@ build:
 
 requirements:
   build:
-    - pkg-config  # [unix]
-    - make  # [unix]
+    - cmake  # [win]
+    - pkg-config  # [not win]
+    - make  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - sqlite
-    - zlib  # [unix]
+    - zlib  # [not win]
   run:
     - sqlite
 

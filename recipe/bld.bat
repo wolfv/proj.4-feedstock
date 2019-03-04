@@ -1,6 +1,9 @@
-nmake /f makefile.vc
+mkdir build
+cd build
+cmake -G "Visual Studio 14" .. -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBPROJ_SHARED="ON" -DCMAKE_C_FLAGS="/WX" -DCMAKE_CXX_FLAGS="/WX" -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"
+cmake --build . --config Release --target install
+cd ..
 
-nmake INSTDIR=%LIBRARY_PREFIX% /f makefile.vc install-all
 if errorlevel 1 exit 1
 
 set ACTIVATE_DIR=%PREFIX%\etc\conda\activate.d
