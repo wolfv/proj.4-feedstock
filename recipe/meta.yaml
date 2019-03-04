@@ -10,7 +10,7 @@ source:
     sha256: 4510a2c1c8f9056374708a867c51b1192e8d6f9a5198dd320bf6a168e44a3657
   - url: http://download.osgeo.org/proj/proj-datumgrid-{{ datumgrid_ver }}.zip
     sha256: b9838ae7e5f27ee732fb0bfed618f85b36e8bb56d7afb287d506338e9f33861e
-
+    folder: data
 
 build:
   number: 0
@@ -37,7 +37,7 @@ test:
   commands:
     # Check if NAD27/NAD83 datum shifting is present if `conus` is present.
     - test -f $PREFIX/share/proj/conus  # [not win]
-    - if not exist %PREFIX%\\share\\proj\\conus exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\share\\proj\\conus exit 1  # [win]
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
     - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975
