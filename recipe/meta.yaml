@@ -31,6 +31,7 @@ requirements:
     - zlib  # [not win]
   run:
     - sqlite
+    - zlib  # [not win]
 
 test:
   commands:
