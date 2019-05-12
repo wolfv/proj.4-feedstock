@@ -7,4 +7,9 @@ if [[ -n "$PROJ_LIB" ]]; then
     export _CONDA_SET_PROJ_LIB=$PROJ_LIB
 fi
 
-export PROJ_LIB=$CONDA_PREFIX/share/proj
+
+if [ -d ${CONDA_PREFIX}/share/proj ]; then
+  export PROJ_LIB=${CONDA_PREFIX}/share/proj
+elif [ -d ${CONDA_PREFIX}/Library/share/proj ]; then
+  export PROJ_LIB=${CONDA_PREFIX}/Library/share/proj
+fi
