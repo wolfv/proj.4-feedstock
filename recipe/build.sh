@@ -17,6 +17,10 @@ mkdir -p $DEACTIVATE_DIR
 
 cp $RECIPE_DIR/scripts/activate.sh $ACTIVATE_DIR/proj4-activate.sh
 cp $RECIPE_DIR/scripts/deactivate.sh $DEACTIVATE_DIR/proj4-deactivate.sh
+cp $RECIPE_DIR/scripts/activate.csh $ACTIVATE_DIR/proj4-activate.csh
+cp $RECIPE_DIR/scripts/deactivate.csh $DEACTIVATE_DIR/proj4-deactivate.csh
+cp $RECIPE_DIR/scripts/activate.fish $ACTIVATE_DIR/proj4-activate.fish
+cp $RECIPE_DIR/scripts/deactivate.fish $DEACTIVATE_DIR/proj4-deactivate.fish
 
 # We can remove this when we start using the new conda-build.
 find $PREFIX -name '*.la' -delete

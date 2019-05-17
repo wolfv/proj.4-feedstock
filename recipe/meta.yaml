@@ -13,7 +13,7 @@ source:
     folder: data
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
@@ -57,3 +57,4 @@ extra:
     - pelson
     - msarahan
     - snowman2
+    - xylar
