@@ -1,11 +1,6 @@
-mkdir build
-cd build
-cmake -G "%CMAKE_GENERATOR%" .. -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBPROJ_SHARED="ON" -DCMAKE_C_FLAGS="/WX" -DCMAKE_CXX_FLAGS="/WX" -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"
-cmake --build . --config Release --target install
-cd ..
-copy /Y data\* %LIBRARY_PREFIX%\\share\\proj
-del /F /Q %LIBRARY_PREFIX%\\share\\proj\\*.cmake
+nmake /f makefile.vc
 
+nmake INSTDIR=%LIBRARY_PREFIX% /f makefile.vc install-all
 if errorlevel 1 exit 1
 
 set ACTIVATE_DIR=%PREFIX%\etc\conda\activate.d
