@@ -4,4 +4,4 @@
 @if defined PROJ_LIB (
     set "_CONDA_SET_PROJ_LIB=%PROJ_LIB%"
 )
-@set "PROJ_LIB=%CONDA_PREFIX%\Library\share\proj"
+@set "PROJ_LIB=%CONDA_PREFIX%\Library\share"
