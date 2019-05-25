@@ -13,7 +13,7 @@ source:
     folder: nad
 
 build:
-  number: 1002
+  number: 1003
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
     #    https://abi-laboratory.pro/tracker/timeline/proj/
@@ -34,14 +34,13 @@ test:
     - if not exist %PREFIX%\\Library\\SHARE\\conus exit 1  # [win]
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
-    # Not sure why this one is not passing now. It did work in the past for this same version!
-    - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975  # [not win]
+    - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975
 
 about:
   home: https://proj4.org/
   license: MIT
   license_file: COPYING
-  summary: 'Cartographic projection software.'
+  summary: 'Cartographic projection software'
 
 extra:
   recipe-maintainers:
