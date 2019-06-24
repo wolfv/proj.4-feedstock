@@ -47,10 +47,10 @@ test:
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
-  home: https://proj4.org/
+  home: https://proj.org/
   license: MIT
   license_file: COPYING
-  summary: 'Cartographic projection software.'
+  summary: 'Cartographic Projections and Coordinate Transformations Library.'
 
 extra:
   recipe-maintainers:
