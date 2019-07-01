@@ -1,13 +1,13 @@
 About proj4
 ===========
 
-Home: https://proj4.org/
+Home: https://proj.org/
 
 Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Cartographic projection software.
+Summary: Cartographic Projections and Coordinate Transformations Library.
 
 
 
