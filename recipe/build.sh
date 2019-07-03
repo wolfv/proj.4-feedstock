@@ -11,6 +11,9 @@ if [[ ! ${HOST} =~ .*linux.* ]] || [[ ! ${ARCH} == 32 ]]; then
 fi
 make install -j${CPU_COUNT}
 
+# Copy datum data.
+cp -r data/* ${PREFIX}/share/proj
+
 ACTIVATE_DIR=${PREFIX}/etc/conda/activate.d
 DEACTIVATE_DIR=${PREFIX}/etc/conda/deactivate.d
 mkdir -p ${ACTIVATE_DIR}
