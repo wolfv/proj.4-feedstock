@@ -1,6 +1,12 @@
-mkdir build
-cd build
-cmake -G "%CMAKE_GENERATOR%" .. -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBPROJ_SHARED="ON" -DCMAKE_C_FLAGS="/WX" -DCMAKE_CXX_FLAGS="/WX" -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"
+mkdir build && cd build
+
+cmake -G "%CMAKE_GENERATOR%" ^
+         -D CMAKE_BUILD_TYPE=Release ^
+         -D BUILD_LIBPROJ_SHARED="ON" ^
+         -D CMAKE_C_FLAGS="/WX" ^
+         -D CMAKE_CXX_FLAGS="/WX" ^
+         -D CMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
+         %SRC_DIR%
 if errorlevel 1 exit 1
 
 cmake --build . --config Release --target install

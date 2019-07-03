@@ -8,12 +8,12 @@ package:
 source:
   - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
     sha256: 5cf0a2360a28b5d724c53edbb87f3f3b14fd96001265411ac4e56f369e2d503f
-  - url: http://download.osgeo.org/proj/proj-datumgrid-{{ datumgrid_ver }}.zip
-    sha256: b9838ae7e5f27ee732fb0bfed618f85b36e8bb56d7afb287d506338e9f33861e
+  - url: http://download.osgeo.org/proj/proj-datumgrid-{{ datumgrid_ver }}.tar.gz
+    sha256: 3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15
     folder: data
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
@@ -29,10 +29,8 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - sqlite
-    - zlib  # [not win]
   run:
     - sqlite
-    - zlib  # [not win]
 
 test:
   commands:
@@ -43,14 +41,12 @@ test:
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
     - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://proj.org/
   license: MIT
   license_file: COPYING
-  summary: 'Cartographic Projections and Coordinate Transformations Library.'
+  summary: 'Cartographic Projections and Coordinate Transformations Library'
 
 extra:
   recipe-maintainers:
