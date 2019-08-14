@@ -1,6 +1,6 @@
 mkdir build && cd build
 
-cmake -G "%CMAKE_GENERATOR%" ^
+cmake -G "NMake Makefiles" ^
          -D CMAKE_BUILD_TYPE=Release ^
          -D BUILD_LIBPROJ_SHARED="ON" ^
          -D CMAKE_C_FLAGS="/WX" ^
