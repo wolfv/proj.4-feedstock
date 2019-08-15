@@ -8,3 +8,4 @@ travis:
 provider:
   osx: azure
   linux: azure
+  win: azure
