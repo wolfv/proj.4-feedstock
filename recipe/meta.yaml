@@ -13,7 +13,7 @@ source:
     folder: nad
 
 build:
-  number: 1005
+  number: 1006
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
     #    https://abi-laboratory.pro/tracker/timeline/proj/
