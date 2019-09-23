@@ -13,7 +13,7 @@ source:
     folder: data
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
@@ -31,6 +31,8 @@ requirements:
     - sqlite
   run:
     - sqlite
+  run_constrained:
+    - proj4 ==999999999999
 
 test:
   commands:
