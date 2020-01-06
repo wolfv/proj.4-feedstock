@@ -18,8 +18,6 @@ FOR /F "tokens=1,2 delims=." %%a IN ("%PKG_VERSION%") DO (
   set PROJ_MAJOR_VERSION=%%a
   set PROJ_MINOR_VERSION=%%b
 )
-copy %LIBRARY_LIB%\proj_%PROJ_MAJOR_VERSION%_%PROJ_MINOR_VERSION%.lib %LIBRARY_LIB%\proj.lib
-if errorlevel 1 exit 1
 
 cd ..
 copy /Y data\* %LIBRARY_PREFIX%\\share\\proj
