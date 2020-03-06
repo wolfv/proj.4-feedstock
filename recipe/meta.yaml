@@ -1,5 +1,5 @@
-{% set version = "6.3.1" %}
-{% set datumgrid_ver = "1.8" %}
+{% set version = "7.0.0" %}
+{% set datumgrid_ver = "1.0" %}
 
 package:
   name: proj
@@ -7,13 +7,13 @@ package:
 
 source:
   - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-    sha256: 6de0112778438dcae30fcc6942dee472ce31399b9e5a2b67e8642529868c86f8
-  - url: http://download.osgeo.org/proj/proj-datumgrid-{{ datumgrid_ver }}.tar.gz
-    sha256: 3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15
+    sha256: ee0e14c1bd2f9429b1a28999240304c0342ed739ebaea3d4ff44c585b1097be8
+  - url: http://download.osgeo.org/proj/proj-data-{{ datumgrid_ver }}.tar.gz
+    sha256: 2637183bb2fa6cd421085734e5212b0c12550b8d5d3ecaadbfc1044648c7a906
     folder: data
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
@@ -29,8 +29,12 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - sqlite
+    - libtiff
+    - curl
   run:
     - sqlite
+    - libtiff
+    - curl
   run_constrained:
     - proj4 ==999999999999
 
