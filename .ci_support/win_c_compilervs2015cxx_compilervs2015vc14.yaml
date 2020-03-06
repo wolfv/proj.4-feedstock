@@ -4,9 +4,17 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+curl:
+- '7.64'
 cxx_compiler:
 - vs2015
+libtiff:
+- 4.1.0
 pin_run_as_build:
+  curl:
+    max_pin: x
+  libtiff:
+    max_pin: x
   sqlite:
     max_pin: x
   vc:
