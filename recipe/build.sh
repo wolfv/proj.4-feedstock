@@ -3,7 +3,7 @@
 export CFLAGS="-O2 -Wl,-S ${CFLAGS}"
 export CXXFLAGS="-O2 -Wl,-S ${CXXFLAGS}"
 
-./configure --prefix=${PREFIX} --without-jni --host=${HOST}
+./configure --prefix=${PREFIX} --host=${HOST}
 
 make -j${CPU_COUNT}
 # skip tests on linux32 due to rounding error causing issues
