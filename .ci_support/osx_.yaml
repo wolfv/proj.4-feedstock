@@ -8,12 +8,12 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-curl:
-- '7.64'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '9'
+libcurl:
+- '7.64'
 libtiff:
 - 4.1.0
 macos_machine:
@@ -21,7 +21,7 @@ macos_machine:
 macos_min_version:
 - '10.9'
 pin_run_as_build:
-  curl:
+  libcurl:
     max_pin: x
   libtiff:
     max_pin: x
