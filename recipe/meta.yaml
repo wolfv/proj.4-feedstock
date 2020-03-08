@@ -1,5 +1,5 @@
 {% set version = "7.0.0" %}
-{% set datumgrid_ver = "1.0" %}
+{% set data_ver = "1.0" %}
 
 package:
   name: proj
@@ -8,7 +8,7 @@ package:
 source:
   - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
     sha256: ee0e14c1bd2f9429b1a28999240304c0342ed739ebaea3d4ff44c585b1097be8
-  - url: http://download.osgeo.org/proj/proj-data-{{ datumgrid_ver }}.tar.gz
+  - url: http://download.osgeo.org/proj/proj-data-{{ data_ver }}.tar.gz
     sha256: 2637183bb2fa6cd421085734e5212b0c12550b8d5d3ecaadbfc1044648c7a906
     folder: data
 
