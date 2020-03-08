@@ -13,3 +13,5 @@ if [ -d ${CONDA_PREFIX}/share/proj ]; then
 elif [ -d ${CONDA_PREFIX}/Library/share/proj ]; then
   export PROJ_LIB=${CONDA_PREFIX}/Library/share/proj
 fi
+
+export PROJ_NETWORK="ON"
