@@ -30,11 +30,11 @@ requirements:
   host:
     - sqlite
     - libtiff
-    - curl
+    - libcurl
   run:
     - sqlite
     - libtiff
-    - curl
+    - libcurl
   run_constrained:
     - proj4 ==999999999999
 
