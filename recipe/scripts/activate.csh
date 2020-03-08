@@ -12,3 +12,5 @@ if ( -d "${CONDA_PREFIX}/share/proj" ) then
 else if ( -d "${CONDA_PREFIX}/Library/share/proj" ) then
   setenv PROJ_LIB "${CONDA_PREFIX}/Library/share/proj"
 endif
+
+setenv PROJ_NETWORK "ON"

@@ -2,7 +2,7 @@ mkdir build && cd build
 
 cmake -G "NMake Makefiles" ^
          -D CMAKE_BUILD_TYPE=Release ^
-         -D BUILD_LIBPROJ_SHARED="ON" ^
+         -D BUILD_SHARED_LIBS="ON" ^
          -D CMAKE_C_FLAGS="/WX" ^
          -D CMAKE_CXX_FLAGS="/WX" ^
          -D CMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
@@ -13,8 +13,6 @@ cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
 cd ..
-copy /Y data\* %LIBRARY_PREFIX%\\share\\proj
-if errorlevel 1 exit 1
 
 del /F /Q %LIBRARY_PREFIX%\\share\\proj\\*.cmake
 if errorlevel 1 exit 1

@@ -9,3 +9,5 @@ if test -d "$CONDA_PREFIX/share/proj"
 else if test -d "$CONDA_PREFIX/Library/share/proj"
   set -gx PROJ_LIB "$CONDA_PREFIX/Library/share/proj"
 end
+
+set -gx PROJ_NETWORK "ON"

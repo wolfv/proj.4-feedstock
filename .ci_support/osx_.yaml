@@ -12,11 +12,19 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '9'
+libcurl:
+- '7.64'
+libtiff:
+- 4.1.0
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
 - '10.9'
 pin_run_as_build:
+  libcurl:
+    max_pin: x
+  libtiff:
+    max_pin: x
   sqlite:
     max_pin: x
 sqlite:

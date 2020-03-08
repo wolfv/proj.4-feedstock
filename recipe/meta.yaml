@@ -1,5 +1,4 @@
-{% set version = "6.3.1" %}
-{% set datumgrid_ver = "1.8" %}
+{% set version = "7.0.0" %}
 
 package:
   name: proj
@@ -7,13 +6,10 @@ package:
 
 source:
   - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-    sha256: 6de0112778438dcae30fcc6942dee472ce31399b9e5a2b67e8642529868c86f8
-  - url: http://download.osgeo.org/proj/proj-datumgrid-{{ datumgrid_ver }}.tar.gz
-    sha256: 3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15
-    folder: data
+    sha256: ee0e14c1bd2f9429b1a28999240304c0342ed739ebaea3d4ff44c585b1097be8
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
@@ -29,16 +25,17 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - sqlite
+    - libtiff
+    - libcurl
   run:
     - sqlite
+    - libtiff
+    - libcurl
   run_constrained:
     - proj4 ==999999999999
 
 test:
   commands:
-    # Check if NAD27/NAD83 datum shifting is present if `conus` is present.
-    - test -f $PREFIX/share/proj/conus  # [not win]
-    - if not exist %LIBRARY_PREFIX%\\share\\proj\\conus exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\proj.lib exit 1  # [win]
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83

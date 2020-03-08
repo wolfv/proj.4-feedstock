@@ -3,7 +3,7 @@
 export CFLAGS="-O2 -Wl,-S ${CFLAGS}"
 export CXXFLAGS="-O2 -Wl,-S ${CXXFLAGS}"
 
-./configure --prefix=${PREFIX} --without-jni --host=${HOST}
+./configure --prefix=${PREFIX} --host=${HOST}
 
 make -j${CPU_COUNT}
 # skip tests on linux32 due to rounding error causing issues
@@ -11,9 +11,6 @@ if [[ ! ${HOST} =~ .*linux.* ]] || [[ ! ${ARCH} == 32 ]]; then
     make check -j${CPU_COUNT}
 fi
 make install -j${CPU_COUNT}
-
-# Copy datum data.
-cp -r data/* ${PREFIX}/share/proj
 
 ACTIVATE_DIR=${PREFIX}/etc/conda/activate.d
 DEACTIVATE_DIR=${PREFIX}/etc/conda/deactivate.d
