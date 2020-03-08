@@ -13,8 +13,6 @@ cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
 cd ..
-copy /Y data\* %LIBRARY_PREFIX%\\share\\proj
-if errorlevel 1 exit 1
 
 del /F /Q %LIBRARY_PREFIX%\\share\\proj\\*.cmake
 if errorlevel 1 exit 1
