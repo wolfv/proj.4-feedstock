@@ -155,6 +155,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@hobu](https://github.com/hobu/)
 * [@msarahan](https://github.com/msarahan/)
 * [@mwtoews](https://github.com/mwtoews/)
 * [@ocefpaf](https://github.com/ocefpaf/)
