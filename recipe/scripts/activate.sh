@@ -8,10 +8,15 @@ if [ -n "$PROJ_LIB" ]; then
 fi
 
 
-if [ -d ${CONDA_PREFIX}/share/proj ]; then
-  export PROJ_LIB=${CONDA_PREFIX}/share/proj
-elif [ -d ${CONDA_PREFIX}/Library/share/proj ]; then
-  export PROJ_LIB=${CONDA_PREFIX}/Library/share/proj
+if [ -d "${CONDA_PREFIX}/share/proj" ]; then
+  export "PROJ_LIB=${CONDA_PREFIX}/share/proj"
+elif [ -d "${CONDA_PREFIX}/Library/share/proj" ]; then
+  export PROJ_LIB="${CONDA_PREFIX}/Library/share/proj"
 fi
 
-export PROJ_NETWORK="ON"
+if [ -f "${CONDA_PREFIX}/share/proj/copyright_and_licenses.csv" ]; then
+  # proj-data is installed because its license was copied over
+  export PROJ_NETWORK="OFF"
+else
+  export PROJ_NETWORK="ON"
+fi
