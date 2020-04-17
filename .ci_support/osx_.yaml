@@ -13,7 +13,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '9'
 libcurl:
-- '7.64'
+- '7'
 libtiff:
 - 4.1.0
 macos_machine:
