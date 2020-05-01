@@ -1,4 +1,4 @@
-{% set version = "7.0.0" %}
+{% set version = "7.0.1" %}
 
 package:
   name: proj
@@ -6,11 +6,11 @@ package:
 
 source:
   - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-    sha256: ee0e14c1bd2f9429b1a28999240304c0342ed739ebaea3d4ff44c585b1097be8
+    sha256: a7026d39c9c80d51565cfc4b33d22631c11e491004e19020b3ff5a0791e1779f
 
 build:
-  number: 3
-  skip: True  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
     #    https://abi-laboratory.pro/tracker/timeline/proj/
@@ -45,7 +45,7 @@ about:
   home: https://proj.org/
   license: MIT
   license_file: COPYING
-  summary: 'Cartographic Projections and Coordinate Transformations Library'
+  summary: Cartographic Projections and Coordinate Transformations Library
 
 extra:
   recipe-maintainers:
