@@ -20,4 +20,4 @@ if ( -f "${CONDA_PREFIX}/share/proj/copyright_and_licenses.csv" ) then
   setenv PROJ_NETWORK "OFF"
 else
   setenv PROJ_NETWORK "ON"
-fi
+endif
