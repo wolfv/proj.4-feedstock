@@ -1,4 +1,4 @@
-{% set version = "7.0.1" %}
+{% set version = "7.1.0" %}
 
 package:
   name: proj
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz
-    sha256: a7026d39c9c80d51565cfc4b33d22631c11e491004e19020b3ff5a0791e1779f
+    sha256: 876151e2279346f6bdbc63bd59790b48733496a957bccd5e51b640fdd26eaa8d
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
