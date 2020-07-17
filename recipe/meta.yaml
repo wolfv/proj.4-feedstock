@@ -9,7 +9,7 @@ source:
     sha256: ee0e14c1bd2f9429b1a28999240304c0342ed739ebaea3d4ff44c585b1097be8
 
 build:
-  number: 4
+  number: 5
   skip: True  # [win and vc<14]
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
