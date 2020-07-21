@@ -9,8 +9,7 @@ source:
     sha256: 876151e2279346f6bdbc63bd59790b48733496a957bccd5e51b640fdd26eaa8d
 
 build:
-  number: 0
-  skip: true  # [win and vc<14]
+  number: 1
   run_exports:
     # so name changes in bugfix revisions.  Pin to bugfix revision.
     #    https://abi-laboratory.pro/tracker/timeline/proj/
@@ -36,6 +35,8 @@ requirements:
 
 test:
   commands:
+    - test -f ${PREFIX}/lib/libproj${SHLIB_EXT}  # [unix]
+    - test ! -f ${PREFIX}/lib/libproj.a          # [unix]
     - if not exist %LIBRARY_LIB%\\proj.lib exit 1  # [win]
     - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84
     - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83
